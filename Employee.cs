@@ -1,7 +1,7 @@
 ﻿using System;
 namespace designIssueExample
 {
-    class Employee
+    public class Employee
     {
         public int Id { get; private set; }
         public string Name { get; private set; }
