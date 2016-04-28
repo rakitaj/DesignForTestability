@@ -45,10 +45,16 @@ namespace designIssueExample
                     switch (employeeFilterType)
                     {
                         case EmployeeFilterType.ByName:
-                            if (!name.StartsWith(filter)) continue;
+                            if (!name.StartsWith(filter))
+                            {
+                                continue;
+                            }
                             break;
                         case EmployeeFilterType.ExemptOnly:
-                            if (age < 40 || !isSalaried) continue;
+                            if (age < 40 || !isSalaried)
+                            {
+                                continue;
+                            }
                             break;
                     }
 
