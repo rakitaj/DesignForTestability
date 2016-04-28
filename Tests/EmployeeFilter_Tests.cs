@@ -21,14 +21,14 @@ namespace designIssueExample.Tests
         {
             
             EmployeeNameFilter filter = new EmployeeNameFilter("Tom");
-            Assert.IsTrue(filter.MatchesFilter(TommyBoy()));
+            Assert.IsTrue(filter.EmployeeMatches(TommyBoy()));
         }
 
         [TestMethod()]
         public void Tommy_Boy__Should_Not_Match_Starts_With_A()
         {
             EmployeeNameFilter filter = new EmployeeNameFilter("A");
-            Assert.IsFalse(filter.MatchesFilter(TommyBoy()));
+            Assert.IsFalse(filter.EmployeeMatches(TommyBoy()));
         }
     }
 }

@@ -15,7 +15,7 @@ namespace designIssueExample.Filters
             this.NameStartsWith = nameStartsWith;
         }
 
-        public override bool MatchesFilter(Employee employee)
+        public override bool EmployeeMatches(Employee employee)
         {
             bool result = false;
             if(employee.Name.StartsWith(this.NameStartsWith))

@@ -8,6 +8,6 @@ namespace designIssueExample.Filters
 {
     public abstract class EmployeeFilter
     {
-        public abstract bool MatchesFilter(Employee employee);
+        public abstract bool EmployeeMatches(Employee employee);
     }
 }
