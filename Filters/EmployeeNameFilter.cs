@@ -12,7 +12,13 @@ namespace designIssueExample.Filters
 
         public EmployeeNameFilter(string nameStartsWith)
         {
-            this.NameStartsWith = nameStartsWith;
+            if(nameStartsWith == null)
+            {
+                throw new ArgumentNullException("filter");
+            } else
+            {
+                this.NameStartsWith = nameStartsWith;
+            }
         }
 
         public override bool EmployeeMatches(Employee employee)
