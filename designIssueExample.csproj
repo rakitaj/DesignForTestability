@@ -50,6 +50,7 @@
     <Compile Include="Filters\EmployeeNameFilter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\EmployeeFilter_Tests.cs" />
     <Compile Include="Tests\Employee_Tests.cs" />
     <Compile Include="Tests\Yucky_Pinning_Tests.cs" />
     <Compile Include="EmployeeDAL.cs" />
