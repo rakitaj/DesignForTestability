@@ -47,6 +47,7 @@
     <Compile Include="EmployeeFilterType.cs" />
     <Compile Include="FakeSql.cs" />
     <Compile Include="Filters\EmployeeFilter.cs" />
+    <Compile Include="Filters\EmployeeNameFilter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\Employee_Tests.cs" />
