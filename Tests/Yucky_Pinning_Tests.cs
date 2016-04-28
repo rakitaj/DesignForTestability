@@ -16,7 +16,7 @@ namespace designIssueExample.Tests
             string expected_1 = "35323 Ted theRed 16 False";
             string expected_2 = "35323 Tina Turnbull 18 False";
             Yucky yucky = new Yucky();
-            var employees = yucky.GetEmployees(EmployeeFilterType.ByName, "T", new FakeSqlConnection());
+            var employees = yucky.GetEmployees(EmployeeFilterType.ByName, "T");
             List<Employee> actual = employees.ToList();
             Assert.IsTrue(actual.Count == 2);
             Assert.AreEqual(expected_1, actual[0].ToString());
@@ -28,7 +28,7 @@ namespace designIssueExample.Tests
         {
             string expected_1 = "35323 Fred Flintstone 42 True";
             Yucky yucky = new Yucky();
-            var employees = yucky.GetEmployees(EmployeeFilterType.ExemptOnly, null, new FakeSqlConnection());
+            var employees = yucky.GetEmployees(EmployeeFilterType.ExemptOnly, null);
             List<Employee> actual = employees.ToList();
             Assert.IsTrue(actual.Count == 1);
             Assert.AreEqual(expected_1, actual[0].ToString());

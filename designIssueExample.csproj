@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CallDatabase.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeFilterType.cs" />
     <Compile Include="FakeSql.cs" />

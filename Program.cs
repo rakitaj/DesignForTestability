@@ -7,8 +7,8 @@ namespace designIssueExample
         static void Main(string[] args)
         {
             Yucky yucky = new Yucky();
-            //var employees = yucky.GetEmployees(EmployeeFilterType.ByName, "T", new FakeSqlConnection());
-            var employees = yucky.GetEmployees(EmployeeFilterType.ExemptOnly, null, new FakeSqlConnection());
+            var employees = yucky.GetEmployees(EmployeeFilterType.ByName, "T");
+            //var employees = yucky.GetEmployees(EmployeeFilterType.ExemptOnly, null);
 
             foreach (Employee employee in employees)
             {
