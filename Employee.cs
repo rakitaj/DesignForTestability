@@ -1,4 +1,5 @@
-﻿using System;
+﻿using designIssueExample.Filters;
+using System;
 namespace designIssueExample
 {
     public class Employee
@@ -19,6 +20,11 @@ namespace designIssueExample
         public override string ToString()
         {
             return String.Format("{0} {1} {2} {3}", Id, Name, Age, IsSalaried);
+        }
+
+        public bool MatchesFilter(EmployeeFilter filter)
+        {
+            return filter.EmployeeMatches(this);
         }
     }
 }

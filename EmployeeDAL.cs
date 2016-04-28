@@ -20,7 +20,7 @@ namespace designIssueExample
             List<Employee> result = new List<Employee>();
             foreach(var employee in employees)
             {
-                if(filter.EmployeeMatches(employee))
+                if(employee.MatchesFilter(filter))
                 {
                     result.Add(employee);
                 }
