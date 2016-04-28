@@ -1,4 +1,5 @@
-﻿using System;
+﻿using designIssueExample.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace designIssueExample
         private const int EmployeeAgeColumnIndex = 2;
         private const int EmployeeIsSalariedColumnIndex = 3;
 
-        public static List<Employee> Execute(EmployeeFilterType employeeFilterType, string filter, string query)
+        public static List<Employee> GetAllEmployees(string query)
         {
             List<Employee> employees = new List<Employee>();
             FakeSqlConnection connection = new FakeSqlConnection();
@@ -41,22 +42,6 @@ namespace designIssueExample
                     string name = reader.GetString(EmployeeNameColumnIndex);
                     int age = reader.GetInt32(EmployeeAgeColumnIndex);
                     bool isSalaried = reader.GetBoolean(EmployeeIsSalariedColumnIndex);
-
-                    switch (employeeFilterType)
-                    {
-                        case EmployeeFilterType.ByName:
-                            if (!name.StartsWith(filter))
-                            {
-                                continue;
-                            }
-                            break;
-                        case EmployeeFilterType.ExemptOnly:
-                            if (age < 40 || !isSalaried)
-                            {
-                                continue;
-                            }
-                            break;
-                    }
 
                     employees.Add(new Employee(id, name, age, isSalaried));
                 }

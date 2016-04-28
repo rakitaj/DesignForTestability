@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="CallDatabase.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="EmployeeFilterType.cs" />
     <Compile Include="FakeSql.cs" />
     <Compile Include="Filters\EmployeeExemptOnlyFilter.cs" />
     <Compile Include="Filters\EmployeeFilter.cs" />

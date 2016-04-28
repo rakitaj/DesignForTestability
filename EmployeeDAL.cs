@@ -1,4 +1,5 @@
-﻿using System;
+﻿using designIssueExample.Filters;
+using System;
 using System.Collections.Generic;
 
 namespace designIssueExample
@@ -6,17 +7,24 @@ namespace designIssueExample
     class EmployeeDAL
     {
 
-        public IEnumerable<Employee> GetEmployees(EmployeeFilterType employeeFilterType, string nameStartsWith)
+        public IEnumerable<Employee> GetEmployees(EmployeeFilter filter)
         {
-            if (employeeFilterType == EmployeeFilterType.ByName && nameStartsWith == null)
+            if (filter == null)
             {
                 throw new ArgumentNullException("filter");
             }
 
             string query = "select * from employee, employee_role inner join employee.Id == employee_role.EmployeeId";
 
-            List<Employee> result = CallDatabase.Execute(employeeFilterType, nameStartsWith, query);
-            
+            List<Employee> employees = CallDatabase.GetAllEmployees(query);
+            List<Employee> result = new List<Employee>();
+            foreach(var employee in employees)
+            {
+                if(filter.EmployeeMatches(employee))
+                {
+                    result.Add(employee);
+                }
+            }
 
             return result;
         }

@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using designIssueExample.Filters;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace designIssueExample.Tests
             string expected_1 = "35323 Ted theRed 16 False";
             string expected_2 = "35323 Tina Turnbull 18 False";
             EmployeeDAL employeeDAL = new EmployeeDAL();
-            var employees = employeeDAL.GetEmployees(EmployeeFilterType.ByName, "T");
+            var employees = employeeDAL.GetEmployees(new EmployeeNameFilter("T"));
             List<Employee> actual = employees.ToList();
             Assert.IsTrue(actual.Count == 2);
             Assert.AreEqual(expected_1, actual[0].ToString());
@@ -28,7 +29,7 @@ namespace designIssueExample.Tests
         {
             string expected_1 = "35323 Fred Flintstone 42 True";
             EmployeeDAL employeeDAL = new EmployeeDAL();
-            var employees = employeeDAL.GetEmployees(EmployeeFilterType.ExemptOnly, null);
+            var employees = employeeDAL.GetEmployees(new EmployeeExemptOnlyFilter());
             List<Employee> actual = employees.ToList();
             Assert.IsTrue(actual.Count == 1);
             Assert.AreEqual(expected_1, actual[0].ToString());
