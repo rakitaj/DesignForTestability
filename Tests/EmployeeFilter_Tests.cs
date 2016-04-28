@@ -11,20 +11,24 @@ namespace designIssueExample.Tests
     [TestClass()]
     public class EmployeeFilter_Tests
     {
+        public Employee TommyBoy()
+        {
+            return new Employee(15, "Tommy Boy", 26, true);
+        }
+
         [TestMethod()]
         public void TommyBoy__Should_Match_Starts_With_Tom()
         {
-            Employee employee1 = new Employee(15, "Tommy Boy", 26, true);
+            
             EmployeeNameFilter filter = new EmployeeNameFilter("Tom");
-            Assert.IsTrue(filter.MatchesFilter(employee1));
+            Assert.IsTrue(filter.MatchesFilter(TommyBoy()));
         }
 
         [TestMethod()]
         public void Tommy_Boy__Should_Not_Match_Starts_With_A()
         {
-            Employee employee1 = new Employee(15, "Tommy Boy", 26, true);
             EmployeeNameFilter filter = new EmployeeNameFilter("A");
-            Assert.IsFalse(filter.MatchesFilter(employee1));
+            Assert.IsFalse(filter.MatchesFilter(TommyBoy()));
         }
     }
 }
