@@ -15,8 +15,8 @@ namespace designIssueExample.Tests
         {
             string expected_1 = "35323 Ted theRed 16 False";
             string expected_2 = "35323 Tina Turnbull 18 False";
-            Yucky yucky = new Yucky();
-            var employees = yucky.GetEmployees(EmployeeFilterType.ByName, "T");
+            EmployeeDAL employeeDAL = new EmployeeDAL();
+            var employees = employeeDAL.GetEmployees(EmployeeFilterType.ByName, "T");
             List<Employee> actual = employees.ToList();
             Assert.IsTrue(actual.Count == 2);
             Assert.AreEqual(expected_1, actual[0].ToString());
@@ -27,8 +27,8 @@ namespace designIssueExample.Tests
         public void Program_Run_With_FilterType_Exempt_Any_Filter()
         {
             string expected_1 = "35323 Fred Flintstone 42 True";
-            Yucky yucky = new Yucky();
-            var employees = yucky.GetEmployees(EmployeeFilterType.ExemptOnly, null);
+            EmployeeDAL employeeDAL = new EmployeeDAL();
+            var employees = employeeDAL.GetEmployees(EmployeeFilterType.ExemptOnly, null);
             List<Employee> actual = employees.ToList();
             Assert.IsTrue(actual.Count == 1);
             Assert.AreEqual(expected_1, actual[0].ToString());

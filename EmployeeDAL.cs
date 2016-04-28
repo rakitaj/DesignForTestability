@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace designIssueExample
 {
-    class Yucky
+    class EmployeeDAL
     {
 
         public IEnumerable<Employee> GetEmployees(EmployeeFilterType employeeFilterType, string filter)

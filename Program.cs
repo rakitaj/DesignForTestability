@@ -6,8 +6,8 @@ namespace designIssueExample
     {
         static void Main(string[] args)
         {
-            Yucky yucky = new Yucky();
-            var employees = yucky.GetEmployees(EmployeeFilterType.ByName, "T");
+            EmployeeDAL employeeDAL = new EmployeeDAL();
+            var employees = employeeDAL.GetEmployees(EmployeeFilterType.ByName, "T");
             //var employees = yucky.GetEmployees(EmployeeFilterType.ExemptOnly, null);
 
             foreach (Employee employee in employees)

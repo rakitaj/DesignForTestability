@@ -52,7 +52,7 @@ namespace designIssueExample
                             break;
                     }
 
-                    employees.Add(new Employee { Name = name, Id = id, Age = age, IsSalaried = isSalaried });
+                    employees.Add(new Employee(id, name, age, isSalaried));
                 }
             }
             return employees;
