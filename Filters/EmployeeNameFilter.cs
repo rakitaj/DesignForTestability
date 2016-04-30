@@ -10,14 +10,14 @@ namespace designIssueExample.Filters
     {
         public String NameStartsWith { get; private set; }
 
-        public EmployeeNameFilter(string nameStartsWith)
+        public EmployeeNameFilter(string nameStartsWithThisString)
         {
-            if(nameStartsWith == null)
+            if(nameStartsWithThisString == null)
             {
-                throw new ArgumentNullException("filter");
+                throw new ArgumentNullException("nameStartsWithThisString");
             } else
             {
-                this.NameStartsWith = nameStartsWith;
+                this.NameStartsWith = nameStartsWithThisString;
             }
         }
 
